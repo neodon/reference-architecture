@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for br in `git branch -r -l 'upstream/*' | sed 's/.*[/]//'`; do git branch --track $br upstream/$br; done
+git pull --rebase --all
+git push --all
+
